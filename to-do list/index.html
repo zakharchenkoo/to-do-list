@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab19</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div ng-controller="TodoController">
+      <h1>Список справ &#128221</h1>
+      <form ng-submit="addTodo()">
+        <input
+          type="text"
+          ng-model="newTodoText"
+          placeholder="Введіть нову справу"
+        />
+        <button type="submit">Додати</button>
+      </form>
+      <ul>
+        <li ng-repeat="todo in todos">
+          {{ todo.text }}
+          <button ng-click="removeTodo(todo)">Видалити</button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
